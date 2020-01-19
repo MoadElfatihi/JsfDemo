@@ -1,13 +1,72 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<head>
-  <title><ui:insert name="title">Default title</ui:insert></title>
-</head>
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<body>
-
-</body>
-
+	<h:head> instructor inscription : 
+	<style>
+		.error {color : red;}
+	</style>
+	</h:head>
+	<br/>
+	<h:body>
+		<h:form>
+			<table>
+				<thead>
+				<tr></tr>
+				<tr></tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td><h:outputLabel value="first Name"/></td>
+						<td>:</td>
+						<td><h:inputText value="#{instructor.user.firstName}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="last Name"/></td>
+						<td>:</td>
+						<td><h:inputText value="#{instructor.user.lastName}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="phone number"/></td>
+						<td>:</td>
+						<td><h:inputText value="#{instructor.user.phone}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="email"/></td>
+						<td>:</td>
+						<td><h:inputText value="#{instructor.user.email}"/></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="years of experience"/></td>
+						<td> : </td>
+						<td><h:inputText id="annee_experience" value="#{instructor.annee_experience}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="teaching language"/> </td>
+						<td> : </td>
+						<td>
+							<h:selectManyCheckbox>
+								<f:selectItem itemLabel="French" itemValue="French" />	
+								<f:selectItem itemLabel="English" itemValue="English"/>
+								<f:selectItem itemLabel="Spanish" itemValue="Spanish"/>
+							</h:selectManyCheckbox>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td><h:commandButton value="sign up" action="student_registration_response"/></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			
+			
+		</h:form>
+	</h:body>
 </html>
